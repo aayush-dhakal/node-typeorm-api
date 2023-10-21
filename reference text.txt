@@ -1,0 +1,10 @@
+For database tables:
+1. One client can have many transactions or many transactions can belong to one client.
+2. Many bankers can many many clients and many clients can have many bankers.
+
+Realtion facts:
+1. For one to one relation:
+- for both raw sql and typeorm:- we can just make a foreign key in the table which have many realtions associated with other table and put its foreign key value as primary_key of other table.
+2. For many to many relations:
+- for raw sql:- we define a seperate new table which has the primary_key of both tables 
+- for typeorm:- we can simply use ManyToMany decorator and not define a seperate table for it and typeorm will automatically create a new table for us with name as tableA_tableB
